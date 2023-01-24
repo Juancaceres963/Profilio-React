@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-export function Burguer() {
+export function BurguerButton(props) {
   return (
     <NavBurguer>
-      <div className="nav-icon">
+      <div
+        onClick={props.handleClick}
+        className={`nav-icon ${props.clicked ? "open" : ""} `}
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -23,7 +26,7 @@ const NavBurguer = styled.div`
     display: inline-block;
   }
   .nav-icon span {
-    background-color: #fff;
+    background-color: #EAE7B1;
     position: absolute;
     border-radius: 2px;
     transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
